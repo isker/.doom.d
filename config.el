@@ -62,3 +62,6 @@
 (use-package! prettier
   :hook ((web-mode js-mode js2-mode) . prettier-mode)
   :init (setq prettier-inline-errors-flag t))
+
+(after! vterm
+  (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.25 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
