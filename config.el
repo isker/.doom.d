@@ -64,4 +64,9 @@
   :init (setq prettier-inline-errors-flag t))
 
 (after! vterm
-  (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.25 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
+  (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
+
+(after! counsel-projectile
+  (counsel-projectile-modify-action
+   'counsel-projectile-switch-project-action
+   '((default counsel-projectile-switch-project-action-vc))))
