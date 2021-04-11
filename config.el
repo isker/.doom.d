@@ -70,3 +70,6 @@
   (counsel-projectile-modify-action
    'counsel-projectile-switch-project-action
    '((default counsel-projectile-switch-project-action-vc))))
+
+(after! lsp-ui
+  (setq lsp-ui-sideline-diagnostic-max-lines 10))
