@@ -73,3 +73,16 @@
 
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-lines 10))
+
+(add-hook! compilation-mode
+  (add-to-list 'compilation-error-regexp-alist 'flow)
+  (add-to-list 'compilation-error-regexp-alist-alist
+               '(flow
+                 ;; Error ---------------------------------------- index.js:5:12
+                 "^\\(Error\\)[[:space:]-]*\\(\\([^:]+\\):\\([[:digit:]]+\\)\\):?\\([[:digit:]]+\\)?"
+                 3 ; file
+                 4 ; line
+                 5 ; column
+                 2 ; type - not a subgroup!  type 2 is "error"
+                 2 ; file:line
+                 (1 compilation-error-face))))
