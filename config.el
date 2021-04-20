@@ -86,3 +86,5 @@
                  2 ; type - not a subgroup!  type 2 is "error"
                  2 ; file:line
                  (1 compilation-error-face))))
+
+(setq git-commit-summary-max-length 68)
