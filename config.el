@@ -68,6 +68,20 @@
   (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
 (set-popup-rule! "^\\*doom:eshell-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right)
 
+;; vterm: "insertion-state" is really emacs-state; only do evil stuff when in
+;; copy-mode. There's just too much jank when trying to edit using evil-mode.
+(add-hook! vterm-mode evil-emacs-state)
+(add-hook! vterm-copy-mode
+  (defun meliache/evil-normal-in-vterm-copy-mode ()
+    (if (bound-and-true-p vterm-copy-mode)
+        (evil-normal-state)
+      (evil-emacs-state))))
+(map!
+ :mode vterm-mode
+ :e "C-g" 'vterm-copy-mode
+ :mode vterm-copy-mode
+ :n "i" 'vterm-copy-mode)
+
 (after! counsel-projectile
   (counsel-projectile-modify-action
    'counsel-projectile-switch-project-action
