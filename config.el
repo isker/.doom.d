@@ -66,6 +66,7 @@
 
 (after! vterm
   (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
+(set-popup-rule! "^\\*doom:eshell-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right)
 
 (after! counsel-projectile
   (counsel-projectile-modify-action
