@@ -50,3 +50,4 @@
 ;(unpin! t)
 (package! prettier)
 (package! theme-magic)
+(package! graphql-mode)

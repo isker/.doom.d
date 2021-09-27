@@ -61,7 +61,7 @@
   (setq evil-snipe-scope 'buffer))
 
 (use-package! prettier
-  :hook ((web-mode js-mode js2-mode) . prettier-mode)
+  :hook ((web-mode js-mode js2-mode graphql-mode css-mode json-mode) . prettier-mode)
   :init (setq prettier-inline-errors-flag t))
 
 (after! vterm
@@ -104,3 +104,6 @@
                  (1 compilation-error-face))))
 
 (setq git-commit-summary-max-length 68)
+
+(use-package! graphql-mode)
+(advice-add 'risky-local-variable-p :override #'ignore)
