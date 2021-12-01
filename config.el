@@ -87,6 +87,7 @@
    'counsel-projectile-switch-project-action
    '((default counsel-projectile-switch-project-action-vc))))
 
+(setq +lsp-company-backends 'company-capf) ; default is '(company-capf company-yasnippet)
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-lines 10))
 
