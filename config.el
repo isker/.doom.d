@@ -70,7 +70,7 @@
 
 ;; vterm: "insertion-state" is really emacs-state; only do evil stuff when in
 ;; copy-mode. There's just too much jank when trying to edit using evil-mode.
-(add-hook! vterm-mode evil-emacs-state)
+(add-hook! vterm-mode 'evil-emacs-state)
 (add-hook! vterm-copy-mode
   (defun meliache/evil-normal-in-vterm-copy-mode ()
     (if (bound-and-true-p vterm-copy-mode)
