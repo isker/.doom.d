@@ -113,3 +113,6 @@
 
 (use-package! graphql-mode)
 (advice-add 'risky-local-variable-p :override #'ignore)
+
+(use-package! nix-mode
+  :mode "\\.nix\\'")
