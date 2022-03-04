@@ -82,10 +82,11 @@
  :mode vterm-copy-mode
  :n "i" 'vterm-copy-mode)
 
-(map!
- :map evil-markdown-mode-map
- ;; Too addicted to emacs navigation in insert mode; go back a word instead of bolding.
- :i "M-b" nil)
+(after! evil-markdown
+  (map!
+   :map evil-markdown-mode-map
+   ;; Too addicted to emacs navigation in insert mode; go back a word instead of bolding.
+   :i "M-b" nil))
 
 (after! counsel-projectile
   (counsel-projectile-modify-action
