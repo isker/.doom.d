@@ -79,6 +79,7 @@
 (map!
  :mode vterm-mode
  :e "C-g" 'vterm-copy-mode
+ :e "<deletechar>" 'vterm-send-delete
  :mode vterm-copy-mode
  :n "i" 'vterm-copy-mode)
 
