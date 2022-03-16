@@ -100,11 +100,6 @@
    ;; Too addicted to emacs navigation in insert mode; go back a word instead of bolding.
    :i "M-b" nil))
 
-(after! counsel-projectile
-  (counsel-projectile-modify-action
-   'counsel-projectile-switch-project-action
-   '((default counsel-projectile-switch-project-action-vc))))
-
 (setq +lsp-company-backends 'company-capf) ; default is '(company-capf company-yasnippet)
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-lines 10))
