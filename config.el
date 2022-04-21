@@ -87,12 +87,22 @@
     (if (bound-and-true-p vterm-copy-mode)
         (evil-normal-state)
       (evil-emacs-state))))
+
+(defun vterm-kill-line ()
+  "Send `C-k' to libvterm."
+  (interactive)
+  (kill-ring-save (point) (vterm-end-of-line))
+  (vterm-send-C-k))
+
 (map!
  :mode vterm-mode
  :e "C-g" 'vterm-copy-mode
+ :e "<escape>" 'vterm-copy-mode
  :e "<deletechar>" 'vterm-send-delete
+ :e "C-k" 'vterm-kill-line
  :mode vterm-copy-mode
- :n "i" 'vterm-copy-mode)
+ :n "i" 'vterm-copy-mode
+ :n "a" 'vterm-copy-mode)
 
 (after! evil-markdown
   (map!
