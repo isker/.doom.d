@@ -104,6 +104,9 @@
  :n "i" 'vterm-copy-mode
  :n "a" 'vterm-copy-mode)
 
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
 (after! evil-markdown
   (map!
    :map evil-markdown-mode-map
