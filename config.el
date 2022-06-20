@@ -135,8 +135,5 @@
 (use-package! graphql-mode)
 (advice-add 'risky-local-variable-p :override #'ignore)
 
-(use-package! nix-mode
-  :mode "\\.nix\\'")
-
 (setq kill-buffer-query-functions
       (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
