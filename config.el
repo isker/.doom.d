@@ -124,3 +124,5 @@
 
 (setq kill-buffer-query-functions
       (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+(setq evil-kill-on-visual-paste nil)
