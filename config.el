@@ -122,6 +122,8 @@
 (setq +lsp-company-backends 'company-capf) ; default is '(company-capf company-yasnippet)
 (after! lsp-ui
   (setq lsp-ui-sideline-diagnostic-max-lines 10))
+(after! lsp-mode
+  (setq lsp-clients-typescript-log-verbosity "off"))
 
 (setq git-commit-summary-max-length 68)
 
