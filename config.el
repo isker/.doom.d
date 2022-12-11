@@ -121,7 +121,8 @@
 
 (setq +lsp-company-backends 'company-capf) ; default is '(company-capf company-yasnippet)
 (after! lsp-ui
-  (setq lsp-ui-sideline-diagnostic-max-lines 10))
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-doc-enable nil))
 (after! lsp-mode
   (setq lsp-clients-typescript-log-verbosity "off"))
 
