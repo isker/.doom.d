@@ -126,6 +126,9 @@
 (after! lsp-mode
   (setq lsp-clients-typescript-log-verbosity "off"))
 
+(after! company
+  (setq company-idle-delay nil))
+
 (setq git-commit-summary-max-length 68)
 
 (use-package! graphql-mode)
