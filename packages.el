@@ -52,4 +52,3 @@
 (package! theme-magic)
 (package! graphql-mode)
 (package! fish-mode)
-(package! magit-delta)
