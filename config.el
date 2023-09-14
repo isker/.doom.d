@@ -60,21 +60,6 @@
 (after! evil-snipe
   (setq evil-snipe-scope 'buffer))
 
-(use-package! prettier
-  :defer t
-  :init
-  (setq prettier-inline-errors-flag t
-        prettier-pre-warm 'none)
-  (dir-locals-set-class-variables 'prettier-js
-                                  '((web-mode . ((eval . (prettier-mode t))))
-                                    (js-mode . ((eval . (prettier-mode t))))
-                                    (js2-mode . ((eval . (prettier-mode t))))
-                                    (typescript-mode . ((eval . (prettier-mode t))))
-                                    (graphql-mode . ((eval . (prettier-mode t))))
-                                    (css-mode . ((eval . (prettier-mode t))))
-                                    (json-mode . ((eval . (prettier-mode t))))))
-  (dir-locals-set-directory-class "/path/to/my/pretty/project/" 'prettier-js))
-
 (after! vterm
   (set-popup-rule! "^\\*doom:vterm-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right))
 (set-popup-rule! "^\\*doom:eshell-popup:" :size 0.4 :vslot -4 :select t :quit nil :ttl 0 :side 'right)
