@@ -110,6 +110,8 @@
         lsp-ui-doc-enable nil))
 (after! lsp-mode
   (setq lsp-clients-typescript-log-verbosity "off"))
+(after! typescript-mode
+  (setq typescript-indent-level 2))
 
 (after! company
   (setq company-idle-delay nil))
@@ -124,3 +126,8 @@
 
 (setq evil-kill-on-visual-paste nil)
 
+;; Until there is a release of this:
+;; https://bitbucket.org/mituharu/emacs-mac/commits/5f6c306095c825eb01708e336f9d03c15271dfe9
+(add-hook 'doom-after-init-hook (lambda ()
+                                  (tool-bar-mode 1)
+                                  (tool-bar-mode 0)))
