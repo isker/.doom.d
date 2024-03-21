@@ -27,7 +27,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox-light)
+(setq doom-theme 'doom-gruvbox)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -132,17 +132,18 @@
       orig-result)))
 (advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
 
-(setq +lsp-company-backends 'company-capf) ; default is '(company-capf company-yasnippet)
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil
         lsp-ui-doc-enable nil))
 (after! lsp-mode
-  (setq lsp-clients-typescript-log-verbosity "off"))
+  (setq lsp-clients-typescript-log-verbosity "off"
+        lsp-completion-show-detail nil))
 (after! typescript-mode
   (setq typescript-indent-level 2))
 
-(after! company
-  (setq company-idle-delay nil))
+(after! corfu
+  (setq corfu-auto nil
+        corfu-preview-current nil))
 
 (setq git-commit-summary-max-length 68)
 
