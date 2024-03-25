@@ -148,6 +148,7 @@
 (setq git-commit-summary-max-length 68)
 
 (use-package! graphql-mode)
+(use-package! jsonnet-mode)
 (advice-add 'risky-local-variable-p :override #'ignore)
 
 (setq kill-buffer-query-functions
@@ -160,3 +161,6 @@
 (add-hook 'doom-after-init-hook (lambda ()
                                   (tool-bar-mode 1)
                                   (tool-bar-mode 0)))
+(use-package! caddyfile-mode
+  :mode (("Caddyfile\\'" . caddyfile-mode)
+         ("caddy\\.conf\\'" . caddyfile-mode)))

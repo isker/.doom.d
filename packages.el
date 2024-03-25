@@ -7,3 +7,5 @@
 
 ;; https://discord.com/channels/406534637242810369/1176206543339925524/1176206543339925524
 (unpin! lsp-mode)
+(package! jsonnet-mode)
+(package! caddyfile-mode)
