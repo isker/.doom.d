@@ -164,3 +164,7 @@
 (use-package! caddyfile-mode
   :mode (("Caddyfile\\'" . caddyfile-mode)
          ("caddy\\.conf\\'" . caddyfile-mode)))
+
+;; yaml-mode derives from text-mode, so it gets spell-fu, which is nonsense.
+;; Why would you think deriving yaml-mode from text-mode is a good idea?
+(add-hook 'yaml-mode-hook (lambda () (spell-fu-mode -1)))
