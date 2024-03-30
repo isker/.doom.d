@@ -143,7 +143,8 @@
 
 (after! corfu
   (setq corfu-auto nil
-        corfu-preview-current nil))
+        corfu-preview-current nil
+        corfu-preselect 'first))
 
 (setq git-commit-summary-max-length 68)
 
