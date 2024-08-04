@@ -138,8 +138,6 @@
 (after! lsp-mode
   (setq lsp-clients-typescript-log-verbosity "off"
         lsp-completion-show-detail nil))
-(after! typescript-mode
-  (setq typescript-indent-level 2))
 
 (after! corfu
   (setq corfu-auto nil
@@ -172,3 +170,11 @@
 ;; yaml-mode derives from text-mode, so it gets spell-fu, which is nonsense.
 ;; Why would you think deriving yaml-mode from text-mode is a good idea?
 (add-hook 'yaml-mode-hook (lambda () (spell-fu-mode -1)))
+
+(use-package! treesit-auto
+  :config
+  (setq
+   ;; Grammars are all provided by nix.
+   treesit-auto-install nil
+   treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))

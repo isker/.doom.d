@@ -8,3 +8,4 @@
 (package! kubel-evil)
 (package! jsonnet-mode)
 (package! caddyfile-mode)
+(package! treesit-auto)
